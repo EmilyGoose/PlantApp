@@ -1,5 +1,6 @@
 package com.example.plantapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -25,6 +26,22 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.login_button).setOnClickListener {
             val myToast = makeText(this, "You clicked a button!", Toast.LENGTH_SHORT)
             myToast.show()
+
+            findViewById<Button>(R.id.login_button).setOnClickListener {
+                val intent = Intent(this@MainActivity, loginregister::class.java)
+                val loginreg = "login"
+                intent.putExtra("logintype", loginreg)
+                // start activity for login
+                startActivity(intent)
+            }
+
+            findViewById<Button>(R.id.register_button).setOnClickListener {
+                val intent = Intent(this@MainActivity, loginregister::class.java)
+                val loginreg = "register"
+                intent.putExtra("logintype", loginreg)
+                // start activity for registration
+                startActivity(intent)
+            }
         }
     }
 
