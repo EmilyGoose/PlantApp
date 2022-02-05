@@ -50,6 +50,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     // Firebase auth
     implementation 'com.google.firebase:firebase-auth-ktx'
+    // Firebase database
+    implementation 'com.google.firebase:firebase-database-ktx'
     // Google Play Services library
     implementation 'com.google.android.gms:play-services-auth:20.1.0'
 
