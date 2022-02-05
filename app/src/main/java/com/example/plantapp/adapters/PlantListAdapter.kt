@@ -34,7 +34,6 @@ class PlantListAdapter(private val plantList: Array<String>) :
         val plant = plantList[position]
         // Bind it to the custom ViewHolder class
         holder.testBindText(plant)
-
     }
 
     // Fun shortcut, we love kotlin
