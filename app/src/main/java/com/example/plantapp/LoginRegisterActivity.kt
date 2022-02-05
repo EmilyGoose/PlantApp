@@ -4,9 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isGone
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -29,11 +31,15 @@ class LoginRegisterActivity : AppCompatActivity() {
         // if trying to log in show log in relevant fields
         if (loginMode == register) {
             findViewById<Button>(R.id.submitCredBtn).setOnClickListener {
-                // toggle first name, email, password, confirm password
-                // button to register
+                // Update the title
+                findViewById<TextView>(R.id.loginTitle).setText(R.string.title_register)
+
+                // Show the name field (store in var so we don't look it up again later)
+                val nameField = findViewById<EditText>(R.id.fieldName)
+                nameField.isGone = false
 
                 // need listener for fields to create user
-                val name = findViewById<TextView>(R.id.fieldName).text.toString().trim()
+                val name = nameField.text.toString().trim()
                 val email = findViewById<TextView>(R.id.fieldEmail).text.toString().trim()
                 val password = findViewById<TextView>(R.id.fieldPassword).text.toString().trim()
 
@@ -62,7 +68,11 @@ class LoginRegisterActivity : AppCompatActivity() {
         }
         // if trying to register show registration relevant fields
         else if (loginMode == login) {
+            // Update the title
+            findViewById<TextView>(R.id.loginTitle).setText(R.string.title_login)
 
+            // Hide the name field
+            findViewById<EditText>(R.id.fieldName).isGone = true
 
             findViewById<Button>(R.id.submitCredBtn).setOnClickListener {
 
