@@ -19,13 +19,14 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        // Todo replace this with actual data
-        val plantList = arrayOf("Tree", "Leaf", "I know what plants are trust me")
-        val plantListView = findViewById<RecyclerView>(R.id.plant_list)
-
         // Initialize Firebase Auth
         auth = Firebase.auth
 
+        // Todo replace this with actual data
+        val plantList = arrayOf("Tree", "Leaf", "I know what plants are trust me")
+
+        // Initialize the RecyclerView and create the adapter
+        val plantListView = findViewById<RecyclerView>(R.id.plant_list)
         plantListView.layoutManager = LinearLayoutManager(this)
         plantListView.adapter = PlantListAdapter(plantList)
 

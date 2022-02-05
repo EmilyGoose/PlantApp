@@ -3,9 +3,6 @@ package com.example.plantapp
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
-import android.widget.Toast.makeText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -23,25 +20,21 @@ class MainActivity : AppCompatActivity() {
         // Initialize Firebase Auth
         auth = Firebase.auth
 
+
         findViewById<Button>(R.id.login_button).setOnClickListener {
-            val myToast = makeText(this, "You clicked a button!", Toast.LENGTH_SHORT)
-            myToast.show()
+            val intent = Intent(this@MainActivity, LoginRegisterActivity::class.java)
+            val loginMode = "login"
+            intent.putExtra("login_mode", loginMode)
+            // start activity for login
+            startActivity(intent)
+        }
 
-            findViewById<Button>(R.id.login_button).setOnClickListener {
-                val intent = Intent(this@MainActivity, loginregister::class.java)
-                val loginreg = "login"
-                intent.putExtra("logintype", loginreg)
-                // start activity for login
-                startActivity(intent)
-            }
-
-            findViewById<Button>(R.id.register_button).setOnClickListener {
-                val intent = Intent(this@MainActivity, loginregister::class.java)
-                val loginreg = "register"
-                intent.putExtra("logintype", loginreg)
-                // start activity for registration
-                startActivity(intent)
-            }
+        findViewById<Button>(R.id.register_button).setOnClickListener {
+            val intent = Intent(this@MainActivity, LoginRegisterActivity::class.java)
+            val loginMode = "register"
+            intent.putExtra("login_mode", loginMode)
+            // start activity for registration
+            startActivity(intent)
         }
     }
 
@@ -50,16 +43,9 @@ class MainActivity : AppCompatActivity() {
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            // Change login button accordingly
-            findViewById<Button>(R.id.login_button).setText(R.string.prompt_logout)
-            // Greet the user ("hello, user!")
-            val text = getString(R.string.status_login_true, currentUser.displayName)
-            findViewById<TextView>(R.id.login_status).text = text
-        } else {
-            // Change login button accordingly
-            findViewById<Button>(R.id.login_button).setText(R.string.prompt_login)
-            // Set text to show not logged in
-            findViewById<TextView>(R.id.login_status).setText(R.string.status_login_false)
+            // You're already logged in, go home
+            val intent = Intent(this@MainActivity, HomeActivity::class.java)
+            startActivity(intent)
         }
     }
 }
