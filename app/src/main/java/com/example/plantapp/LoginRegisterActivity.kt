@@ -30,13 +30,14 @@ class LoginRegisterActivity : AppCompatActivity() {
 
         // if trying to log in show log in relevant fields
         if (loginMode == register) {
-            findViewById<Button>(R.id.submitCredBtn).setOnClickListener {
-                // Update the title
-                findViewById<TextView>(R.id.loginTitle).setText(R.string.title_register)
+            // Update the title
+            findViewById<TextView>(R.id.loginTitle).setText(R.string.title_register)
 
-                // Show the name field (store in var so we don't look it up again later)
-                val nameField = findViewById<EditText>(R.id.fieldName)
-                nameField.isGone = false
+            // Show the name field (store in var so we don't look it up again later)
+            val nameField = findViewById<EditText>(R.id.fieldName)
+            nameField.isGone = false
+
+            findViewById<Button>(R.id.submitCredBtn).setOnClickListener {
 
                 // need listener for fields to create user
                 val name = nameField.text.toString().trim()
