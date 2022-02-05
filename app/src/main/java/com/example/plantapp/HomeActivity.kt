@@ -35,10 +35,14 @@ class HomeActivity : AppCompatActivity() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
-//        if (currentUser != null) {
-//            // todo
-//        } else {
-//            // todo kick the user out to login activity
-//        }
+        if (currentUser != null) {
+            // todo
+        } else {
+            // Kick unauthed users to login screen to log back in
+//            val intent = Intent(this@HomeActivity, loginregister::class.java)
+//            val loginMode = "login"
+//            intent.putExtra("logintype", loginMode)
+//            startActivity(intent)
+        }
     }
 }
