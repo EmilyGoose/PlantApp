@@ -54,6 +54,10 @@ class SearchResultActivity : AppCompatActivity() {
             plantData.child("title").setValue(title)
             plantData.child("extract").setValue(extract)
             plantData.child("thumbnail").setValue(imgSrc)
+
+            // Return the user to their list of plants
+            val intent = Intent(this@SearchResultActivity, HomeActivity::class.java)
+            startActivity(intent)
         }
     }
 

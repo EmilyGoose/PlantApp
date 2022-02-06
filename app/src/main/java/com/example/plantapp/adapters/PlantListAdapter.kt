@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.plantapp.R
+import org.json.JSONObject
 
-class PlantListAdapter(private val plantList: Array<String>) :
+class PlantListAdapter(private val plantList: List<JSONObject>) :
     RecyclerView.Adapter<PlantListAdapter.ViewHolder>() {
 
     // Reference to view in custom ViewHolder
@@ -15,8 +16,8 @@ class PlantListAdapter(private val plantList: Array<String>) :
         // Todo make a plant class or something idk (figure it out later lmao)
         private lateinit var plantName: String
 
-        fun testBindText(text: String) {
-            this.plantName = text
+        fun bindToCard(plant: JSONObject) {
+            this.plantName = plant.getString("title")
             view.findViewById<TextView>(R.id.plant_name).text = this.plantName
         }
     }
@@ -33,7 +34,7 @@ class PlantListAdapter(private val plantList: Array<String>) :
         // Get plant for the list position
         val plant = plantList[position]
         // Bind it to the custom ViewHolder class
-        holder.testBindText(plant)
+        holder.bindToCard(plant)
     }
 
     // Fun shortcut, we love kotlin
