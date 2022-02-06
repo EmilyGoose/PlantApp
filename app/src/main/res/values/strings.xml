@@ -18,4 +18,5 @@
     <string name="title_register">Register for Plant App</string>
     <string name="prompt_search">Find a plant</string>
     <string name="plant_image">Plant Image</string>
+    <string name="prompt_add_plant">Add to Garden</string>
 </resources>
