@@ -16,7 +16,7 @@
             android:exported="false" />
         <activity
             android:name=".PlantSearchActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".PlantDetailActivity"
             android:exported="false" />
