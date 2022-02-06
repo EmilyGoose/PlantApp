@@ -3,6 +3,7 @@ package com.example.plantapp
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -57,6 +58,12 @@ class HomeActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.greet_user).text =
                 getString(R.string.title_greeting, userData.getString("Name"))
 
+        }
+
+        // Add event listener to add button
+        findViewById<Button>(R.id.button_add).setOnClickListener {
+            val intent = Intent(this@HomeActivity, PlantSearchActivity::class.java)
+            startActivity(intent)
         }
 
 

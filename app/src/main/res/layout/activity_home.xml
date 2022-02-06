@@ -38,13 +38,23 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/garden_title">
+        app:layout_constraintTop_toBottomOf="@id/garden_title"
+        android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/plant_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scrollbars="vertical" />
+
+        <Button
+            android:id="@+id/button_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:text="@string/prompt_add"/>
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
