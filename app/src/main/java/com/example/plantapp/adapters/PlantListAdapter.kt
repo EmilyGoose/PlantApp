@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.plantapp.R
 import com.squareup.picasso.Picasso
+import jp.wasabeef.picasso.transformations.CropSquareTransformation
 import org.json.JSONObject
 
 class PlantListAdapter(private val plantList: List<JSONObject>) :
@@ -24,7 +25,7 @@ class PlantListAdapter(private val plantList: List<JSONObject>) :
             view.findViewById<TextView>(R.id.plant_name).text = this.plantName
             //Set plant image
             val imgSrc = plant.getString("thumbnail")
-            Picasso.get().load(imgSrc).into(view.findViewById<ImageView>(R.id.plant_picture));
+            Picasso.get().load(imgSrc).transform(CropSquareTransformation()).into(view.findViewById<ImageView>(R.id.plant_picture));
         }
     }
 
