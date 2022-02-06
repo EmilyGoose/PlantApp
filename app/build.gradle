@@ -4,6 +4,10 @@ plugins {
     id 'com.google.gms.google-services'
 }
 
+def apikeyPropertiesFile = rootProject.file("apikey.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
 android {
     compileSdk 32
 
@@ -13,6 +17,8 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
+
+        buildConfigField("String", "PLANT_API_KEY", apikeyProperties['PLANT_API_KEY'])
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

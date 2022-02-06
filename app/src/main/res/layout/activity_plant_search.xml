@@ -28,4 +28,15 @@
         app:iconifiedByDefault="false"
         app:layout_constraintTop_toBottomOf="@id/title_search" />
 
+    <Button
+        android:id="@+id/photo_button"
+        android:text="@string/prompt_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/search_input"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:drawableStart="@android:drawable/ic_menu_camera"
+        android:layout_marginTop="20sp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
