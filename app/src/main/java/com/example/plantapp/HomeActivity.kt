@@ -2,6 +2,7 @@ package com.example.plantapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,23 +33,31 @@ class HomeActivity : AppCompatActivity() {
         database.child("users").child(auth.currentUser?.uid.toString()).get().addOnSuccessListener {
             val userData = JSONObject(it.value as Map<*, *>)
 
-            // Initialize the RecyclerView and create the adapter
-            val plantListView = findViewById<RecyclerView>(R.id.plant_list)
-            plantListView.layoutManager = LinearLayoutManager(this)
+            try {
 
-            // Create an ArrayList<JSONObject> to hold all the plants individually
-            val plantKeysIterator = userData.getJSONObject("Plants").keys()
-            val plantList = ArrayList<JSONObject>()
-            // Iterate over keys and add corresponding values to list
-            while(plantKeysIterator.hasNext()) {
-                plantList.add(userData.getJSONObject("Plants").getJSONObject(plantKeysIterator.next()))
+                // Initialize the RecyclerView and create the adapter
+                val plantListView = findViewById<RecyclerView>(R.id.plant_list)
+                plantListView.layoutManager = LinearLayoutManager(this)
+
+                // Create an ArrayList<JSONObject> to hold all the plants individually
+                val plantKeysIterator = userData.getJSONObject("Plants").keys()
+                val plantList = ArrayList<JSONObject>()
+                // Iterate over keys and add corresponding values to list
+                while (plantKeysIterator.hasNext()) {
+                    plantList.add(
+                        userData.getJSONObject("Plants").getJSONObject(plantKeysIterator.next())
+                    )
+                }
+                plantListView.adapter = PlantListAdapter(plantList)
+            } catch (e: Exception) {
+                Log.e("HomeActivity", "Error rendering plants. User probably has none")
             }
-            plantListView.adapter = PlantListAdapter(plantList)
 
             // Hi, user!
-            findViewById<TextView>(R.id.greet_user).text = getString(R.string.title_greeting, userData.getString("Name"))
-        }
+            findViewById<TextView>(R.id.greet_user).text =
+                getString(R.string.title_greeting, userData.getString("Name"))
 
+        }
 
 
     }

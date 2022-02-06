@@ -3,9 +3,11 @@ package com.example.plantapp.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.plantapp.R
+import com.squareup.picasso.Picasso
 import org.json.JSONObject
 
 class PlantListAdapter(private val plantList: List<JSONObject>) :
@@ -17,8 +19,12 @@ class PlantListAdapter(private val plantList: List<JSONObject>) :
         private lateinit var plantName: String
 
         fun bindToCard(plant: JSONObject) {
+            // Set plant name
             this.plantName = plant.getString("title")
             view.findViewById<TextView>(R.id.plant_name).text = this.plantName
+            //Set plant image
+            val imgSrc = plant.getString("thumbnail")
+            Picasso.get().load(imgSrc).into(view.findViewById<ImageView>(R.id.plant_picture));
         }
     }
 

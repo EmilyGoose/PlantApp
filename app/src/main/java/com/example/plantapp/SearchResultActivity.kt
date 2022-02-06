@@ -37,7 +37,8 @@ class SearchResultActivity : AppCompatActivity() {
         // Grab the info from the json object
         val title = pageData.getString("title")
         val extract = pageData.getString("extract")
-        val imgSrc = pageData.getJSONObject("thumbnail").getString("source")
+        // Get page image at 256px
+        val imgSrc = pageData.getJSONObject("thumbnail").getString("source").replace(Regex("[0-9]+px"), "256px")
 
         // Set the views in the page
         findViewById<TextView>(R.id.plant_title).text = title
