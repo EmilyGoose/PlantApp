@@ -10,7 +10,7 @@
     <string name="main_login">Login</string>
     <string name="main_register">Register</string>
     <string name="submit_button">Submit</string>
-    <string name="garden_welcome">My Garden</string>
+    <string name="garden_welcome">Your Garden</string>
     <string name="hint_name">First Name</string>
     <string name="hint_password">Password</string>
     <string name="hint_email">Email</string>
@@ -20,4 +20,5 @@
     <string name="plant_image">Plant Image</string>
     <string name="prompt_add_plant">Add to Garden</string>
     <string name="prompt_add">Add</string>
+    <string name="prompt_photo">Photo Search</string>
 </resources>
