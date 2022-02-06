@@ -7,10 +7,12 @@
     tools:context=".SearchResultActivity">
 
     <LinearLayout
+        android:id="@+id/info_linear_layout"
         android:layout_width="400dp"
         android:layout_height="300dp"
+        android:layout_marginTop="100sp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/button_add_garden"
+        app:layout_constraintBottom_toTopOf="@+id/button_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias=".5"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,9 +22,9 @@
             android:id="@+id/plant_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="10sp"
             android:text="@string/placeholder"
             android:textAlignment="center"
-            android:paddingBottom="10sp"
             android:textSize="34sp" />
 
         <LinearLayout
@@ -58,14 +60,41 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button_add_garden"
+    <LinearLayout
+        android:id="@+id/button_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="180dp"
-        android:text="@string/prompt_add_plant"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        android:padding="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/info_linear_layout">
+
+
+        <Button
+            android:id="@+id/button_add_garden"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5sp"
+            android:text="@string/prompt_add_plant"
+            tools:ignore="ButtonStyle,RtlHardcoded" />
+
+        <Button
+            android:id="@+id/button_add_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5sp"
+            android:text="@string/prompt_add_comment"
+            tools:ignore="ButtonStyle,RtlHardcoded" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/comment_list"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:scrollbars="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_bar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
