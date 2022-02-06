@@ -54,7 +54,7 @@ class SearchResultActivity : AppCompatActivity() {
             // Write title and extract
             plantData.child("title").setValue(title)
             plantData.child("extract").setValue(extract)
-            plantData.child("thumbnail").setValue(imgSrc)
+            plantData.child("thumbnail").child("source").setValue(imgSrc)
 
             // Return the user to their list of plants
             val intent = Intent(this@SearchResultActivity, HomeActivity::class.java)
