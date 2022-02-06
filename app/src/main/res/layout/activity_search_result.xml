@@ -10,7 +10,7 @@
         android:id="@+id/info_linear_layout"
         android:layout_width="400dp"
         android:layout_height="300dp"
-        android:layout_marginTop="100sp"
+        android:layout_marginTop="20sp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/button_bar"
         app:layout_constraintEnd_toEndOf="parent"
