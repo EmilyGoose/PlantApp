@@ -11,12 +11,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isGone
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class LoginRegisterActivity : AppCompatActivity() {
 
     private val TAG = "LoginRegisterActivity"
     private lateinit var auth: FirebaseAuth
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +31,10 @@ class LoginRegisterActivity : AppCompatActivity() {
 
         // Initialize Firebase Auth
         auth = Firebase.auth
+
+        //Followed documentation to add this
+        val database = Firebase.database
+
 
         // if trying to log in show log in relevant fields
         if (loginMode == register) {
@@ -53,6 +60,9 @@ class LoginRegisterActivity : AppCompatActivity() {
                             Log.d(TAG, "createUserWithEmail:success")
                             val user = auth.currentUser
                             // TODO write user's name to db
+                            //Philip add users name to db attempt (not good)
+                            val myRef = database.getReference("users/UUID1/Name")
+                            myRef.setValue(name)
                             // Send the user to the home activity
                             val intent =
                                 Intent(this@LoginRegisterActivity, HomeActivity::class.java)

@@ -9,16 +9,13 @@
         <entry key="..\:/Philip/Code/Hackathons/PlantApp/app/src/main/res/layout/activity_loginregister.xml" value="0.33" />
         <entry key="..\:/Philip/Code/Hackathons/PlantApp/app/src/main/res/layout/activity_main.xml" value="0.1685185185185185" />
         <entry key="..\:/Philip/Code/Hackathons/PlantApp/app/src/main/res/layout/plant_list_item.xml" value="0.18541666666666667" />
+        <entry key="..\:/Philip/Code/Hackathons/PlantApp/app/src/main/res/layout/search_result.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/PlantApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.212" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/PlantApp/app/src/main/res/layout/activity_home.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/PlantApp/app/src/main/res/layout/activity_loginregister.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/PlantApp/app/src/main/res/layout/activity_main.xml" value="0.21739130434782608" />
-        <entry key="..\:/Users/misha/AndroidStudioProjects/PlantApp/app/src/main/res/layout/activity_plant_detail.xml" value="0.24094202898550723" />
-        <entry key="..\:/Users/misha/AndroidStudioProjects/PlantApp/app/src/main/res/layout/activity_plant_search.xml" value="0.24094202898550723" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/PlantApp/app/src/main/res/layout/fragment_button.xml" value="0.24094202898550723" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/PlantApp/app/src/main/res/layout/item_plant_list.xml" value="0.20208333333333334" />
-        <entry key="..\:/Users/misha/AndroidStudioProjects/PlantApp/app/src/main/res/layout/plant_list_item.xml" value="0.24094202898550723" />
-        <entry key="..\:/Users/misha/AndroidStudioProjects/PlantApp/app/src/main/res/layout/search_result.xml" value="0.24094202898550723" />
       </map>
     </option>
   </component>
