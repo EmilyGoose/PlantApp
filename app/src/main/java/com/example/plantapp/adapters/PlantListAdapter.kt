@@ -24,7 +24,7 @@ class PlantListAdapter(private val plantList: List<JSONObject>) :
             this.plantName = plant.getString("title")
             view.findViewById<TextView>(R.id.plant_name).text = this.plantName
             //Set plant image
-            val imgSrc = plant.getJSONObject("thumbnail").getString("Source")
+            val imgSrc = plant.getJSONObject("thumbnail").getString("source")
             Picasso.get().load(imgSrc).transform(CropSquareTransformation()).into(view.findViewById<ImageView>(R.id.plant_picture));
         }
     }
