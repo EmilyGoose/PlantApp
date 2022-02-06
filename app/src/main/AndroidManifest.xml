@@ -22,9 +22,6 @@
             android:name=".PlantSearchActivity"
             android:exported="false" />
         <activity
-            android:name=".PlantDetailActivity"
-            android:exported="false" />
-        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity

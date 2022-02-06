@@ -9,36 +9,38 @@
     <LinearLayout
         android:layout_width="400dp"
         android:layout_height="300dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/button_add_garden"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias=".5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/plant_image"
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/plant_image" />
+        <TextView
+            android:id="@+id/plant_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder"
+            android:textAlignment="center"
+            android:paddingBottom="10sp"
+            android:textSize="34sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:paddingLeft="20sp"
+            android:paddingRight="20sp">
 
-            <TextView
-                android:id="@+id/plant_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/placeholder"
-                android:textAlignment="center"
-                android:textSize="34sp" />
+            <ImageView
+                android:id="@+id/plant_image"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/plant_image" />
 
             <ScrollView
-                android:paddingLeft="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
