@@ -23,4 +23,5 @@
     <string name="prompt_photo">Photo Search</string>
     <string name="prompt_delete">Remove From Garden</string>
     <string name="prompt_add_comment">Write Comment</string>
+    <string name="placeholder_date">Added on 2022–02–06</string>
 </resources>
