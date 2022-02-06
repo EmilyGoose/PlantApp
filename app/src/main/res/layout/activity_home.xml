@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
-    <!--android:background="@color/design_default_color_background">-->
 
     <TextView
         android:id="@+id/greet_user"

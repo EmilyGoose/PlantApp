@@ -19,12 +19,12 @@
 
     <SearchView
         android:id="@+id/search_input"
+        android:background="@drawable/background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50sp"
         android:layout_marginTop="20sp"
         android:layout_marginRight="50sp"
-        android:background="@color/browser_actions_bg_grey"
         app:iconifiedByDefault="false"
         app:layout_constraintTop_toBottomOf="@id/title_search" />
 
