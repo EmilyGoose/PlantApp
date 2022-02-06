@@ -10,21 +10,22 @@
         android:id="@+id/title_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
         android:text="@string/prompt_search"
         android:textSize="34sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="50sp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <SearchView
         android:id="@+id/search_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/title_search"
-        android:layout_marginTop="20sp"
         android:layout_marginLeft="50sp"
+        android:layout_marginTop="20sp"
         android:layout_marginRight="50sp"
-        android:background="@color/browser_actions_bg_grey"/>
+        android:background="@color/browser_actions_bg_grey"
+        app:iconifiedByDefault="false"
+        app:layout_constraintTop_toBottomOf="@id/title_search" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
