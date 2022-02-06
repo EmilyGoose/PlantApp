@@ -97,7 +97,6 @@ class PlantSearchActivity : AppCompatActivity() {
                     // Launch the search result activity
                     val intent = Intent(this@PlantSearchActivity, SearchResultActivity::class.java)
                     intent.putExtra("data", pageJSON.toString())
-                    // start activity for registration
                     startActivity(intent)
                 }
             }

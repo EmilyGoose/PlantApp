@@ -1,5 +1,7 @@
 package com.example.plantapp.adapters
 
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.plantapp.R
+import com.example.plantapp.SearchResultActivity
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.CropSquareTransformation
 import org.json.JSONObject
@@ -15,17 +18,30 @@ class PlantListAdapter(private val plantList: List<JSONObject>) :
     RecyclerView.Adapter<PlantListAdapter.ViewHolder>() {
 
     // Reference to view in custom ViewHolder
-    class ViewHolder(private var view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(private var view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
         // Todo make a plant class or something idk (figure it out later lmao)
         private lateinit var plantName: String
+        private lateinit var plant: JSONObject
 
         fun bindToCard(plant: JSONObject) {
-            // Set plant name
+            // Set plant name and data
             this.plantName = plant.getString("title")
+            this.plant = plant
             view.findViewById<TextView>(R.id.plant_name).text = this.plantName
             //Set plant image
             val imgSrc = plant.getJSONObject("thumbnail").getString("source")
-            Picasso.get().load(imgSrc).transform(CropSquareTransformation()).into(view.findViewById<ImageView>(R.id.plant_picture));
+            Picasso.get().load(imgSrc).transform(CropSquareTransformation()).into(view.findViewById<ImageView>(R.id.plant_picture))
+            view.setOnClickListener(this)
+        }
+
+        override fun onClick(clickedView: View?) {
+            Log.d("PlantListAdapter", "Clicked list")
+            // Open the info page for the plant
+            val context = this.view.context
+            val intent = Intent(context, SearchResultActivity::class.java)
+            intent.putExtra("data", this.plant.toString())
+            // start activity
+            context.startActivity(intent)
         }
     }
 
