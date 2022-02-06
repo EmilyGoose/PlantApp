@@ -92,7 +92,13 @@ class PlantSearchActivity : AppCompatActivity() {
                     val resJSON = JSONObject(it.string())
                     val pageListJSON = resJSON.getJSONObject("query").getJSONObject("pages")
                     val pageJSON = pageListJSON.getJSONObject(pageListJSON.names()!!.getString(0))
-                    Log.d("WikiSearch", pageJSON.getString("extract"))
+                    Log.d("WikiSearch", "Found a result")
+
+                    // Launch the search result activity
+                    val intent = Intent(this@PlantSearchActivity, SearchResultActivity::class.java)
+                    intent.putExtra("data", pageJSON.toString())
+                    // start activity for registration
+                    startActivity(intent)
                 }
             }
         })

@@ -1,5 +1,6 @@
 package com.example.plantapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -36,14 +37,10 @@ class HomeActivity : AppCompatActivity() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
-        if (currentUser != null) {
-            // todo
-        } else {
-            // Kick unauthed users to login screen to log back in
-//            val intent = Intent(this@HomeActivity, loginregister::class.java)
-//            val loginMode = "login"
-//            intent.putExtra("logintype", loginMode)
-//            startActivity(intent)
+        if (currentUser == null) {
+            // Kick unauthed users to home screen
+            val intent = Intent(this@HomeActivity, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }
