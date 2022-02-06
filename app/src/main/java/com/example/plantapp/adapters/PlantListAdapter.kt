@@ -1,6 +1,7 @@
 package com.example.plantapp.adapters
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,15 +30,18 @@ class PlantListAdapter(private val plantList: List<JSONObject>) :
             view.findViewById<TextView>(R.id.plant_name).text = this.plantName
             //Set plant image
             val imgSrc = plant.getJSONObject("thumbnail").getString("source")
-            Picasso.get().load(imgSrc).transform(CropSquareTransformation()).into(view.findViewById<ImageView>(R.id.plant_picture));
+            Picasso.get().load(imgSrc).transform(CropSquareTransformation()).into(view.findViewById<ImageView>(R.id.plant_picture))
+            view.setOnClickListener(this)
         }
 
         override fun onClick(clickedView: View?) {
+            Log.d("PlantListAdapter", "Clicked list")
             // Open the info page for the plant
-            val intent = Intent(clickedView?.context, SearchResultActivity::class.java)
+            val context = this.view.context
+            val intent = Intent(context, SearchResultActivity::class.java)
             intent.putExtra("data", this.plant.toString())
             // start activity
-            clickedView?.context?.startActivity(intent)
+            context.startActivity(intent)
         }
     }
 
