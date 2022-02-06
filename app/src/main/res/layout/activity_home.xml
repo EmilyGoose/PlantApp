@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
-    android:background="@color/design_default_color_background">
+    tools:context=".HomeActivity">
+    <!--android:background="@color/design_default_color_background">-->
 
     <TextView
         android:id="@+id/greet_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
         android:text="@string/placeholder"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/garden_title"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,25 +26,29 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
+        android:layout_marginBottom="32dp"
         android:paddingBottom="20dp"
         android:text="@string/garden_welcome"
         android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/greet_user" />
+        app:layout_constraintTop_toBottomOf="@+id/greet_user" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/garden_title"
-        android:orientation="vertical">
+        app:layout_constraintTop_toBottomOf="@id/garden_title">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/plant_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="450dp"
             android:scrollbars="vertical" />
 
         <Button
@@ -53,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:text="@string/prompt_add"/>
+            android:text="@string/prompt_add" />
     </LinearLayout>
 
 

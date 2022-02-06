@@ -3,7 +3,7 @@
 Created for UofTHacks IX
 
 ## Inspiration
-Throughout the course of the pandemic, many people have gravitated towards owning plants as relatively low-cost and low-maintenance companions. New plant owners can find it overwhelming to keep track of the types of all the plants they own, as well as their watering schedules and specific needs on top of their personal lives. Our goal was to design an Android application to aid new plant parents and help restore the livlihood of their plants by improving access to better care instructions.  The time saved and hassle streamlined through use of evergreen most importantly restores the user's ability to allocate time to care for themself as well.
+Throughout the course of the pandemic, many people have gravitated towards owning plants as relatively low-cost and low-maintenance companions. New plant owners can find it overwhelming to keep track of the types of all the plants they own, as well as their watering schedules and specific needs on top of their personal lives. Our goal was to design an Android application to aid new plant parents and help restore the livelihood of their plants by improving access to better care instructions.  The time saved and hassle streamlined through use of evergreen most importantly restores the user's ability to allocate time to care for themself as well.
 
 ## What it does
 evergreen includes a variety of tools to help new plant owners tend to their garden.
