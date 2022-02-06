@@ -12,8 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PlantApp">
         <activity
-            android:name=".HomeActivity"
+            android:name=".PlantSearchActivity"
             android:exported="true" />
+        <activity
+            android:name=".PlantDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginRegisterActivity"
             android:exported="false" />

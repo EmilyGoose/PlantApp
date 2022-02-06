@@ -15,5 +15,6 @@
     <string name="hint_password">Password</string>
     <string name="hint_email">Email</string>
     <string name="title_login">Log in to Plant App</string>
-    <string name="title_register">Register for PlantApp</string>
+    <string name="title_register">Register for Plant App</string>
+    <string name="prompt_search">Find a plant</string>
 </resources>
